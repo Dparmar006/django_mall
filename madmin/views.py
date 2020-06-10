@@ -27,7 +27,6 @@ def registerAdmin(request):
       messages.success(request, f'Account created for {user.username} ')
       return redirect('dashboard') 
   else:
-    print('failed')
     form = AdminRegisterForm()
   context = {'form' : form}
   return render(request, 'mallm/register.html',context)
@@ -81,3 +80,4 @@ class ProductDetailedView(LoginRequiredMixin, DetailView):
   model = Product
   template_name = 'mallm/ProductDetailedView.html'
  
+

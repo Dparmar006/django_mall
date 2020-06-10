@@ -41,13 +41,20 @@
           </a></div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li class="nav-item  ">
+            <li class="nav-item active">
               <a class="nav-link" href={% url 'dashboard' %}>
                 <i class="material-icons">dashboard</i>
                 <p>Dashboard</p>
               </a>
             </li>
-            
+
+             <li class="nav-item">
+              <a class="nav-link" href={% url 'Adding Customer' %}>
+                <i class="material-icons">store</i>
+                <p>Billing</p>
+              </a>
+            </li>
+
             <li class="nav-item ">
               <a class="nav-link" href={% url 'ShowInventory' %}>
                 <i class="material-icons">store</i>
@@ -140,10 +147,15 @@
 
   
 {% comment %}  {% endcomment %}
-<div class="card-body mt-5">
+<div class="card-body mt-5 mb-0">
 {% if messages %}
   {% for message in messages %}
-    <div class="alert text-{{message.tag}}">{{message}}</div>
+    <div class="alert alert-{{message.tags}}">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="material-icons">close</i>
+      </button>
+      <span>{{message}}</span>
+    </div>
   {% endfor %}
 {% endif %}
 </div>

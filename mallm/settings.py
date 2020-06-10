@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'madmin.apps.MadminConfig',
+    'billing.apps.BillingConfig',
     'crispy_forms',
     'django_filters'
 ]

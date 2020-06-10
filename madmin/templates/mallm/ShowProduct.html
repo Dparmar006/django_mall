@@ -60,6 +60,11 @@
                           <td class="text-primary">
                             <a href="{% url 'ShowProductDetail' p.pk %}" class="btn btn-primary btn-round" >Details</a>
                           </td>
+                          <td class="text-danger">
+                            <a href="{% url 'ShowProductDetail' p.pk %}" class="btn btn-danger btn-round" >
+                              <i class="material-icons">delete</i>
+                            </a>
+                          </td>
                         </tr>
                         {% endfor %}
                       </tbody>
