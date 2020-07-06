@@ -13,7 +13,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 #filter
 from .filters import ProductTableFilter
 from .forms import AddProductToInventory, AdminRegisterForm
+# models
 from .models import AdminData, Product
+from billing.models import Customer
 
 
 def registerAdmin(request):
@@ -40,7 +42,8 @@ def sample(request):
 #   return render(request, 'mallm/login.html',{'form' :form})
 @login_required
 def dashboard(request):
-  return render(request,'mallm/dashboard.html')
+  context = {'customers' :  Customer.objects.all()}
+  return render(request,'mallm/dashboard.html', context)
 
 
 @login_required

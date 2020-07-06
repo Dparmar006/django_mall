@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'madmin.apps.MadminConfig',
     'billing.apps.BillingConfig',
     'crispy_forms',
-    'django_filters'
+    'django_filters',
+    # 'simple_autocomplete'
 ]
 
 MIDDLEWARE = [

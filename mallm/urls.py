@@ -23,7 +23,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('madmin.urls')),
-    path("billing/", include('billing.urls'), name="BillingModule")
+    path("billing/", include('billing.urls'), name="BillingModule"),
+    # path(r'^simple-autocomplete/', include('simple_autocomplete.urls', namespace='simple_autocomplete'))
 ]
  
 urlpatterns += staticfiles_urlpatterns()
