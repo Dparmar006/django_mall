@@ -142,9 +142,9 @@
                       {% for customer in customers %}
                       <tr>
                         <td>1</td>
-                        <td>{{customer.fname}}{{customer.lname}} </td>
+                        <td>{{customer.fname}} {{customer.lname}} </td>
                         <td>$36,738</td>
-                        <td>{{customer.product}}</td>
+                        <td>{{customer.Product_name}}</td>
                       </tr>
                     {% endfor %}
                     </tbody>
@@ -152,6 +152,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-tabs card-header-warning">
