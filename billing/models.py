@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Customer(models.Model):
-  product = models.OneToOneField(Product, on_delete=models.CASCADE)
+  product = models.ManyToManyField(Product)
   fname = models.CharField(max_length=30)
   lname = models.CharField(max_length=30)
   quantity = models.IntegerField(default=1)

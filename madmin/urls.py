@@ -12,6 +12,8 @@ urlpatterns = [
     path('logout/',auth_views.LogoutView.as_view(template_name='mallm/logout.html'),name="logout"),
     path('',views.dashboard,name="dashboard"),
     path('addItem/',views.addToInventory,name="AddToInventory"),
+    path('ShowItemDetail/<int:pk>/delete/',views.delete_product,name="DeleteProduct"),
+
     path('addItem2/',AddToInventory.as_view(),name="AddToInventory"),
     path('ShowItem/',views.productFilterView,name="ShowInventory"),
     path('ShowItemDetail/<int:pk>/',ProductDetailedView.as_view(),name="ShowProductDetail"),

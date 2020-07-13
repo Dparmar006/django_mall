@@ -89,7 +89,10 @@
                   <p class="card-description">
                    {{object.Description}}
                   </p>
-                  <a class="btn btn-primary btn-round" href={% url 'UpdateProductDetail' object.pk %}>Edit</a>
+                  <a class="btn btn-primary btn-round mr-1" href={% url 'UpdateProductDetail' object.pk %}>Edit</a>
+                   <a href="{% url 'DeleteProduct' object.pk %}" class="btn btn-danger btn-round" >
+                              <i class="material-icons">delete</i>
+                   </a>
                 </div>
               </div>
             </div>

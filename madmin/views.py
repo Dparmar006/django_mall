@@ -40,9 +40,10 @@ def sample(request):
 #   if request.method == 'POST':
   
 #   return render(request, 'mallm/login.html',{'form' :form})
+
 @login_required
 def dashboard(request):
-  context = {'customers' :  Customer.objects.all()}
+  context = {'customers' :  Customer.objects.all().order_by('-pk')[:5]}
   return render(request,'mallm/dashboard.html', context)
 
 
@@ -83,4 +84,11 @@ class ProductDetailedView(LoginRequiredMixin, DetailView):
   model = Product
   template_name = 'mallm/ProductDetailedView.html'
  
+
+# delete product
+def delete_product(request,pk):
+  product_id = pk
+  Product.objects.filter(pk= pk).delete()
+  return redirect('ShowInventory')
+
 

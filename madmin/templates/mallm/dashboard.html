@@ -127,8 +127,8 @@
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <h4 class="card-title">Recent customers</h4>
+                  <p class="card-category">5 Most recent customers on 15th September, 2016</p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
@@ -136,15 +136,15 @@
                       <th>ID</th>
                       <th>Name</th>
                       <th>Salary</th>
-                      <th>Country</th>
+                      <th>Products</th>
                     </thead>
                     <tbody>
                       {% for customer in customers %}
                       <tr>
-                        <td>1</td>
+                        <td>{{customer.pk}}</td>
                         <td>{{customer.fname}} {{customer.lname}} </td>
                         <td>$36,738</td>
-                        <td>{{customer.Product_name}}</td>
+                        <td>{{customer.product.all|join:'<br>'}}</td>
                       </tr>
                     {% endfor %}
                     </tbody>
